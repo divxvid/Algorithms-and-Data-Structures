@@ -60,7 +60,7 @@ struct SegmentTree {
         left->buildTree(a, l, mid-1) ;
         right = new SegmentTree() ;
         right->buildTree(a, mid, r) ;
-        
+
 		this->recalculate_values() ;
     }
 
