@@ -1,9 +1,13 @@
+/*
+ * Refer to Codeforces EDU Segment Tree part 1A.
+ */
+
+
 #include <bits/stdc++.h>
 using namespace std ;
 
 struct SegmentTree {
-    SegmentTree* left ;
-	SegmentTree* right ;
+	SegmentTree *left, *right ;
     long long value ;
     int left_limit, right_limit ;
 
