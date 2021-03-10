@@ -61,7 +61,7 @@ struct SparseTable {
 	T query(int L, int R) {
 		int seg_len = R - L + 1 ;
 		int row_idx = log[seg_len] ;
-		return min(table[row_idx][L], table[row_idx][L+seg_len-row_idx]);
+		return min(table[row_idx][L], table[row_idx][L+seg_len-row_idx-1]);
 	}
 };
 
