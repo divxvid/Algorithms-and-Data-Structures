@@ -14,14 +14,14 @@ struct DSU {
         }
     }
 
-    void get_parent(int i) {
+    int get_parent(int i) {
         while (parent[i] != i) {
             i = parent[i] ;
         }
         return i ;
     }
 
-    void find(int a, int b) {
+    bool find(int a, int b) {
         return get_parent(a) == get_parent(b) ;
     }
 
