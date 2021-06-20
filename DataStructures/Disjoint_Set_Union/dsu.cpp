@@ -1,17 +1,14 @@
 struct DSU {
     int sz ;
-    int* parent ;
-    long long* weight ;
+    vector<int> parent ;
+    vector<long long> weight ;
 
     DSU(int n) {
         sz = n+1 ;
-        parent = new int[sz] ;
-        weight = new long long[sz] ;
+        parent.resize(sz, -1) ;
+        weight.resize(sz, 1) ;
 
-        for (int i = 0; i < sz; ++i) {
-            parent[i] = i ;
-            weight[i] = 0 ;
-        }
+        iota(parent.begin(), parent.end(), 0) ;
     }
 
     int get_parent(int i) {
@@ -37,10 +34,5 @@ struct DSU {
             parent[_pa] = _pb ;
             weight[_pb] += weight[_pa] ;
         }
-    }
-
-    ~DSU() {
-        delete[] parent ;
-        delete[] weight ;
     }
 };
