@@ -60,7 +60,21 @@ struct SuffixArray {
             }
         }
     }
-} ;
+
+    vector<int> build_lcp_array() {
+        vector<int> lcp(size-1) ;
+        int skip = 0 ;
+        for (int i = 0; i < size-1; ++i) {
+            int idx = ranks[i] ;
+            int j = suffix_array[idx-1] ;
+            while (s[i+skip] == s[j+skip]) 
+                ++skip ;
+            lcp[idx-1] = skip ;
+            skip = max(0, skip-1) ;
+        }
+        return lcp ;
+    }
+};
 
 int main() {
     string s ;
