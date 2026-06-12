@@ -1,4 +1,7 @@
 struct LCA {
+  //Pass in the adjecency vector as the input to the constructor
+  //NOTE: this assumes that the nodes are present in range [1, N].
+  //NOTE: Make sure to convert 0 numbered nodes to 1 based numbering.
   LCA(vector<vector<int>>& G) {
     n_nodes = G.size();
     entry_time.resize(n_nodes);
